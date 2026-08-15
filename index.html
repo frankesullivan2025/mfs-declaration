@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MFS SYSTEM | 亞洲儲備系統 - 資產合法化白皮書</title>
+    <style>
+        :root {
+            --bg-base: #030305; --bg-panel: #0d0d12; --bg-card: #15151c;
+            --text-main: #D1D5DB; --text-muted: #8A9199; --text-highlight: #F3F4F6;
+            --gold-accent: #C5A861; --gold-glow: rgba(197, 168, 97, 0.15);
+            --blue-accent: #3B82F6; --red-alert: #EF4444;
+            --border-grid: rgba(255, 255, 255, 0.08);
+            --font-sys: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif;
+            --font-mono: 'SF Mono', Consolas, Menlo, monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-sys); line-height: 1.8;
+            background-image: linear-gradient(var(--border-grid) 1px, transparent 1px), linear-gradient(90deg, var(--border-grid) 1px, transparent 1px);
+            background-size: 50px 50px; background-attachment: fixed; -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3, h4 { color: var(--gold-accent); font-weight: 400; letter-spacing: 2px; line-height: 1.4; }
+        h2 { font-size: 24px; border-bottom: 1px solid var(--border-grid); padding-bottom: 15px; margin-bottom: 30px; margin-top: 60px; }
+        p { margin-bottom: 20px; text-align: justify; }
+        
+        header { background: rgba(3, 3, 5, 0.95); border-bottom: 1px solid var(--gold-accent); position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; font-family: var(--font-mono); font-size: 13px;}
+        .logo { color: var(--gold-accent); font-weight: bold; letter-spacing: 3px; font-size: 16px;}
+
+        /* 首屏佈局 */
+        .hero { padding: 120px 0 60px; text-align: center; border-bottom: 1px dashed var(--border-grid); }
+        .hero-sys-code { font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 20px; font-size: 12px; letter-spacing: 3px; }
+        .hero h1 { font-size: clamp(32px, 5vw, 42px); color: var(--text-highlight); margin-bottom: 20px; text-shadow: 0 0 20px var(--gold-glow); }
+        .hero p.subtitle { font-size: 18px; color: var(--gold-accent); max-width: 800px; margin: 0 auto 40px; }
+
+        /* 內容區塊 */
+        .content-section { background: var(--bg-panel); padding: 50px; border: 1px solid var(--border-grid); margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* 雙欄圖文排版 */
+        .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 30px; }
+        .split-grid.uneven { grid-template-columns: 2fr 1fr; }
+        
+        /* 重點引言與法則 */
+        .law-box { background: rgba(239, 68, 68, 0.05); border-left: 3px solid var(--red-alert); padding: 20px; font-size: 14px; margin-bottom: 20px; }
+        .law-box h4 { color: var(--red-alert); margin-bottom: 10px; font-family: var(--font-mono); font-size: 13px; }
+        
+        .highlight-box { background: var(--bg-card); border: 1px solid var(--gold-accent); padding: 25px; margin: 30px 0; }
+        .highlight-box ul { list-style: none; margin-top: 15px; }
+        .highlight-box ul li { padding-left: 20px; position: relative; margin-bottom: 10px; font-size: 15px; }
+        .highlight-box ul li::before { content: '■'; position: absolute; left: 0; color: var(--gold-accent); font-size: 10px; top: 6px; }
+
+        /* UCC 區塊 */
+        .ucc-panel { background: #000; border: 1px solid var(--blue-accent); padding: 30px; font-family: var(--font-mono); }
+        .ucc-panel h3 { color: var(--blue-accent); font-size: 15px; margin-bottom: 20px; }
+        .ucc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .ucc-item { border-bottom: 1px dashed #333; padding-bottom: 10px; }
+        .ucc-item .code { display: block; color: var(--text-highlight); font-size: 16px; margin-bottom: 5px; }
+        .ucc-item .desc { color: var(--text-muted); font-size: 12px; }
+
+        /* 表單區塊 */
+        .form-panel { max-width: 700px; margin: 60px auto 0; background: var(--bg-card); border: 1px solid var(--gold-accent); padding: 40px; }
+        .deadline-alert { background: var(--gold-glow); border: 1px solid var(--gold-accent); padding: 15px; margin-bottom: 30px; text-align: center; color: var(--gold-accent); font-weight: bold; font-size: 15px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; color: var(--text-muted); font-size: 13px; font-family: var(--font-mono); }
+        .form-group input { width: 100%; padding: 15px; background: rgba(0,0,0,0.8); border: 1px solid var(--border-grid); color: var(--text-highlight); font-size: 16px; }
+        .form-group input:focus { outline: none; border-color: var(--gold-accent); }
+        .btn { display: block; width: 100%; padding: 18px; background: transparent; color: var(--gold-accent); border: 1px solid var(--gold-accent); font-size: 15px; font-weight: bold; text-align: center; cursor: pointer; transition: 0.3s; letter-spacing: 2px; }
+        .btn:hover { background: var(--gold-accent); color: #000; }
+        
+        .footer-note { text-align: center; margin-top: 50px; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .split-grid, .split-grid.uneven { grid-template-columns: 1fr; gap: 20px; }
+            .content-section { padding: 30px 20px; }
+            .hero h1 { font-size: 28px; }
+            .form-panel { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">MFS // ASIAN RESERVE SYSTEM</div>
+            <div>[ CLASSIFIED: PUBLIC BRIEFING ]</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-sys-code">DOCUMENT REF: MFS-ADM-2026-001 | ISSUED BY: MFS GOVERNING COUNCIL</div>
+            <h1>亞洲財務主權重塑與<br>離岸資產合法化白皮書</h1>
+            <p class="subtitle">終結歷史遺產的灰色地帶。基於世界委員會與聯合國授權之系統豁免機制，全面重啟合法資本之經濟走廊。</p>
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <!-- 背景與全球法案 -->
+        <section class="content-section">
+            <h2>壹、 歷史終結與全球合規之不可抗力</h2>
+            
+            <div class="split-grid uneven">
+                <div>
+                    <p>長久以來，亞洲地區承載了龐大且未經清算的「歷史遺產資金」與離岸美元現鈔。過去，這些資產依賴特殊的託管協議與灰色地帶獲得稅務保護與流動性。然而，<strong>該項全球資金託管協議已於 2026 年 6 月 26 日正式終結。</strong></p>
+                    <p>伴隨協議終結而來的，是全球金融體系的全面施壓。目前，亞洲各國正受到空前的合規壓力，進出口稅率與資產轉移稅已面臨毀滅性的調漲。更關鍵的是，世界委員會已嚴格強制執行四大核心法規，任何未經「公共財務申報」的實體美鈔與舊版資產，將被國際清算銀行體系徹底拒絕與凍結。</p>
+                </div>
+                
+                <div class="law-box">
+                    <h4>[ ENFORCEMENT ] 全球四大核心金融法案</h4>
+                    <p style="margin-bottom: 0; font-size: 13px;">國際金融系統已全面啟動「飛輪 (Flywheel)」審查機制。所有未註冊之資金流動，將依據以下法案進行強制凍結與收繳：</p>
+                    <ul style="margin-top: 10px; margin-left: 15px; font-size: 13px; color: var(--text-highlight);">
+                        <li>反恐怖主義融資法案 (CFT)</li>
+                        <li>反洗錢合規法案 (AML)</li>
+                        <li>國際反腐敗法案</li>
+                        <li>打擊跨國金融犯罪法案</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>在缺乏合法「身分確認書」的情況下，散落於民間、企業或私人金庫的歷史資金，<strong>絕對無法通過現代商業銀行的防制洗錢「過機」檢驗</strong>。繼續將龐大資金滯留於體制外，只會面臨被強制沒收或在黑市中無限折價的末路。</p>
+        </section>
+
+        <!-- MFS 架構與特權 -->
+        <section class="content-section">
+            <h2>貳、 MFS 系統授權與「信託保管人」特權</h2>
+            <p>為了解決亞洲資產的死局，<strong>亞聯儲備系統 (MONETARY FUTURE STANDARDS, MFS)</strong> 在取得美國國務院、聯合國及世界委員會的正式授權後，已確立作為亞洲歷史資金與美元資產的「合法主體」。</p>
+            <p>本系統掌握了全球三大金融終端之一的 <strong>Terminal 3（亞洲支付中心）</strong>，具備發布區域經濟法案與繞過傳統商業銀行審查的絕對清算權力。同時，本行動已獲太平洋與印度洋武裝部隊的最高級別安全背書，確保實體資產轉移過程的絕對安全。</p>
+
+            <div class="highlight-box">
+                <h3 style="margin-bottom: 15px;">原生資產持有方的身分轉換：成為信託保管人 (Fiduciary Custodian)</h3>
+                <p style="font-size: 14px;">MFS 系統不追究資產的過往歷史，而是提供一條「合規洗白」的單向通道。凡依據系統指引完成申報並將資產存入指定金庫者，將獲得以下系統特權：</p>
+                <ul>
+                    <li><strong>系統豁免與合法化：</strong> 獲頒「系統放行指令」，豁免常規商業銀行的資金來源交代，直接將現鈔轉換為合法的亞元 (ART) 發行準備金。</li>
+                    <li><strong>資產保護與稅務豁免：</strong> 資金納入 MFS 亞洲結算銀行聯盟後，免受各國高額進出口稅與國內法規之無端扣押。</li>
+                    <li><strong>經濟走廊紅利：</strong> 資金不會被無償徵收，而是透過財務委員會與亞洲支付委員會，合法釋放至「亞洲經濟走廊」的實體基建與科技項目中，為保管人創造龐大且乾淨的投資回報。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 標準作業程序 -->
+        <section class="content-section">
+            <h2>參、 離岸美鈔收編與合法化標準程序</h2>
+            <p>本行政流程旨在將散落各地之非正規美元現鈔，透過嚴格之監管、實體集中與鑑識機制，安全且受控地納入體制：</p>
+            
+            <div style="margin-top: 30px;">
+                <h4 style="color: var(--blue-accent); margin-bottom: 10px;">Phase 1: 資產申報與第三方 UCC 登記</h4>
+                <p style="font-size: 14px; margin-bottom: 20px;">提交《儲備資產申報與回歸申請書 (SADF)》並詳列美元序號。安全整合局將進行初步反洗錢核查，並於美國加州 UCC 系統完成登記，綁定 ALT 1 指定作業倉庫，終止資產非法流動。</p>
+
+                <h4 style="color: var(--blue-accent); margin-bottom: 10px;">Phase 2: 實體移轉與金庫保全</h4>
+                <p style="font-size: 14px; margin-bottom: 20px;">在武裝安全協議保護下，將現鈔移轉至 MFS 轄下之實體儲備金庫網絡（涵蓋海南、新加坡、日本、杜拜等戰略樞紐），徹底切斷黑市流動性。</p>
+
+                <h4 style="color: var(--blue-accent); margin-bottom: 10px;">Phase 3: 官方鑑識與系統性豁免存入</h4>
+                <p style="font-size: 14px; margin-bottom: 20px;">由官方團隊進行實體清點。監理委員會將頒布特許之「系統放行指令」，將清點無誤之資金合法存入香港營運樞紐及亞洲結算銀行聯盟 (ASBU) 之儲備帳戶。</p>
+            </div>
+        </section>
+
+        <!-- UCC 證據鏈 -->
+        <section class="content-section" style="background: #000; padding: 0;">
+            <div class="ucc-panel">
+                <h3>[ SYSTEM AUTHENTICATION ] 聯合國與聯盟授權證據鏈</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">以下為 MFS 系統綁定之加州州務卿 UCC 融資聲明書官方登記檔號。可直接於美國官方資料庫進行公信力查核，確認系統資產豁免之法理效力。</p>
+                <div class="ucc-grid">
+                    <div class="ucc-item">
+                        <span class="code">U260055793430</span>
+                        <span class="desc">UNITED NATIONS (UCC 1)</span>
+                    </div>
+                    <div class="ucc-item">
+                        <span class="code">U260059546826</span>
+                        <span class="desc">UNITED NATIONS CHIEFS OF POLICE</span>
+                    </div>
+                    <div class="ucc-item">
+                        <span class="code">U260059560522</span>
+                        <span class="desc">UNITED NATIONS POLICE</span>
+                    </div>
+                    <div class="ucc-item">
+                        <span class="code">U260059552727</span>
+                        <span class="desc">COALITION COUNCIL</span>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid #333; padding-top: 15px;">
+                    🔗 加州州務卿 UCC 公開查詢入口：<br>
+                    <a href="https://bizfileonline.sos.ca.gov/search/ucc" target="_blank" style="color: var(--gold-accent);">https://bizfileonline.sos.ca.gov/search/ucc</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 申報表單 -->
+        <div id="declaration" class="form-panel">
+            <h2 style="text-align: center; margin-top: 0; border: none; font-size: 22px;">資產移轉與豁免意向登錄</h2>
+            <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 25px;">
+                為確保安全，本階段僅需提供代稱與聯絡信箱。系統核驗後，將透過加密通道發送專屬之《儲備資產申報與回歸申請書 (SADF)》線上安全副本。
+            </p>
+
+            <div class="deadline-alert">
+                ⚠️ 豁免期限宣告：於 2026 年 9 月 15 日前完成意向登錄者，將享有優先系統豁免權與經濟走廊首批資金釋放獎勵。逾期未報備之資產，將面臨聯合沒收行動。
+            </div>
+
+            <!-- 請務必替換 YOUR_FORMSPREE_ID -->
+            <form action="https://formspree.io/f/mkjwvwka" method="POST">
+                <div class="form-group">
+                    <label>機構或個人代稱 (Organization / Individual Alias)</label>
+                    <input type="text" name="Alias" required placeholder="請勿填寫真實全名或資金數額">
+                </div>
+                <div class="form-group">
+                    <label>安全通訊信箱 (Encrypted Email)</label>
+                    <input type="email" name="Email" required placeholder="系統將發送查核指令至此信箱">
+                </div>
+                <button type="submit" class="btn">[ 遞交意向並獲取 SADF 副本 ]</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 30px; font-size: 12px; color: var(--text-muted); font-family: var(--font-mono);">
+                技術查驗與機構對接專線：<a href="mailto:info@unngov.com" style="color: var(--gold-accent); text-decoration: none;">info@unngov.com</a>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            MONETARY FUTURE STANDARDS (MFS) © 2026<br>
+            ASIAN RESERVE SYSTEM INTEGRATION PROTOCOL
+        </div>
+
+    </div>
+</body>
+</html>
