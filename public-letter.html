@@ -94,16 +94,21 @@
 
         /* Footer & Sign-off */
         .sign-off {
-            margin-top: 50px;
-            text-align: left;
+            margin-top: 60px;
+            text-align: center; /* 改為置中對齊 */
             font-weight: bold;
+            text-transform: uppercase; /* 強制全部大寫 */
+        }
+
+        .sign-off p {
+            margin: 5px 0;
         }
 
         .seal-placeholder {
-            margin-top: 30px;
+            margin-top: 25px;
             font-style: italic;
             color: #555;
-            text-align: left;
+            text-align: center; /* 印章描述也置中 */
         }
 
         /* Responsive adjustments for mobile */
@@ -178,10 +183,12 @@
         <!-- SIGNATURE AREA -->
         <div class="sign-off">
             <p>BY ORDER OF THE COURT</p>
-            <p>Manson Fund Fiscal Security Affairs Court</p>
+            <p>MANSON FUND FISCAL SECURITY AFFAIRS COURT</p>
         </div>
         
-
+        <div class="seal-placeholder">
+            <p>[ Official Seal of the Global & Asia Jurisdiction ]</p>
+        </div>
 
     </div>
 
