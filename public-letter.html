@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFFICIAL COURT DIRECTIVE - Manson Fund Fiscal Security Affairs Court</title>
     <style>
-        /* CSS Reset and Base Styles */
         body {
-            font-family: "Times New Roman", Times, serif; /* Authoritative legal font */
-            background-color: #f4f4f4; /* Subtle background */
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f4f4f4;
             color: #111;
             line-height: 1.6;
             margin: 0;
@@ -17,7 +16,6 @@
             justify-content: center;
         }
 
-        /* Document Container */
         .document-container {
             background-color: #ffffff;
             max-width: 850px;
@@ -25,9 +23,29 @@
             padding: 60px 80px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 1px solid #ccc;
+            position: relative;
         }
 
-        /* Header & Logo Section */
+        /* Language Switcher Button Style */
+        .lang-switch {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background-color: #fff;
+            border: 1px solid #111;
+            padding: 6px 12px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: #111;
+            color: #fff;
+        }
+
         .header {
             text-align: center;
             border-bottom: 2px solid #000;
@@ -36,7 +54,7 @@
         }
 
         .logo {
-            max-width: 150px; /* Adjust logo size here */
+            width: 140px;
             height: auto;
             margin-bottom: 15px;
         }
@@ -64,7 +82,6 @@
             margin: 4px 0;
         }
 
-        /* Body Typography */
         h3 {
             font-size: 18px;
             text-transform: uppercase;
@@ -76,7 +93,7 @@
 
         p {
             font-size: 15px;
-            text-align: justify; /* Formal document alignment */
+            text-align: justify;
             margin-bottom: 15px;
         }
 
@@ -92,26 +109,23 @@
             text-align: justify;
         }
 
-        /* Footer & Sign-off */
+        /* 修正：署名置中且全部大寫 */
         .sign-off {
             margin-top: 60px;
-            text-align: center; /* 改為置中對齊 */
+            text-align: center;
             font-weight: bold;
-            text-transform: uppercase; /* 強制全部大寫 */
+            text-transform: uppercase;
         }
-
+        
         .sign-off p {
             margin: 5px 0;
         }
 
-        .seal-placeholder {
-            margin-top: 25px;
-            font-style: italic;
-            color: #555;
-            text-align: center; /* 印章描述也置中 */
+        /* Language visibility control */
+        .lang-vn {
+            display: none;
         }
 
-        /* Responsive adjustments for mobile */
         @media (max-width: 600px) {
             .document-container {
                 padding: 30px 20px;
@@ -119,78 +133,154 @@
             .header h1 {
                 font-size: 20px;
             }
+            .lang-switch {
+                top: 15px;
+                right: 15px;
+                font-size: 12px;
+                padding: 4px 8px;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="document-container">
+        <!-- Language Switcher Button -->
+        <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">Tiếng Việt</button>
+
         <!-- HEADER SECTION -->
         <div class="header">
-            <!-- LOGO: Replace the src URL with the direct link to your logo image on GitHub -->
-            <img src="manson-logo.png" alt="Manson Court Seal" style="width: 140px; height: auto; margin-bottom: 15px;">
+            <!-- Replace 'logo.png' with your uploaded file name in GitHub -->
+            <img src="logo.png" alt="Manson Court Seal" class="logo">
             
-            <h1>OFFICIAL COURT DIRECTIVE</h1>
-            <h2>Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
+            <h1 class="lang-en">OFFICIAL COURT DIRECTIVE</h1>
+            <h1 class="lang-vn">CHỈ THỊ CỦA TÒA ÁN</h1>
+            
+            <h2 class="lang-en">Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
+            <h2 class="lang-vn">Chỉ thị Công nhận Dự trữ Tư pháp & Chuẩn hóa Tuân thủ Toàn cầu</h2>
         </div>
 
         <!-- META INFORMATION -->
         <div class="meta-info">
-            <p><strong>ISSUING AUTHORITY:</strong> Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</p>
-            <p><strong>LOCATION:</strong> London, United Kingdom</p>
-            <p><strong>EFFECTIVE DATE:</strong> September 9, 2026</p>
-            <p><strong>APPLICABILITY:</strong> All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</p>
+            <p><strong class="lang-en">ISSUING AUTHORITY:</strong><strong class="lang-vn">CƠ QUAN BAN HÀNH:</strong> <span class="lang-en">Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</span><span class="lang-vn">Tòa án Vụ việc An ninh Tài chính Quỹ Manson & Trụ sở Toàn cầu Tiêu chuẩn Tiền tệ Tương lai (MFS).</span></p>
+            <p><strong class="lang-en">LOCATION:</strong><strong class="lang-vn">ĐỊA ĐIỂM:</strong> <span class="lang-en">London, United Kingdom</span><span class="lang-vn">London, Vương quốc Anh.</span></p>
+            <p><strong class="lang-en">EFFECTIVE DATE:</strong><strong class="lang-vn">NGÀY CÓ HIỆU LỰC:</strong> <span class="lang-en">September 9, 2026</span><span class="lang-vn">09 tháng 09 năm 2026.</span></p>
+            <p><strong class="lang-en">APPLICABILITY:</strong><strong class="lang-vn">ĐỐI TƯỢNG ÁP DỤNG:</strong> <span class="lang-en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span><span class="lang-vn">Tất cả các tổ chức, cá nhân được ủy thác và người thụ hưởng cuối cùng trên toàn cầu đang nắm giữ, bảo quản hoặc quản lý tài sản Đô la Mỹ vật lý (USD Pallets), bao gồm toàn bộ hồ sơ nguồn gốc và thông quan loại 17, 21 hoặc 24 (bao gồm SKR, Chứng nhận Nguồn tiền, v.v.).</span></p>
         </div>
 
-        <!-- DOCUMENT CONTENT -->
-        <p>The world is entering a historic turning point in the systemic update of the global financial underlying ledger. Recently, this Court has received a vast influx of commercial proposals attempting to liquidate physical "USD Pallets." To ensure the stability of the global financial order, this Court now exercises its supreme jurisdiction to issue this emergency directive. The objective is to terminate impractical underground commercial settlements and provide the sole lawful pathway for <strong>Compliance Remediation & Asset Regularization</strong>.</p>
+        <!-- ENGLISH CONTENT -->
+        <div class="lang-en">
+            <p>The world is entering a historic turning point in the systemic update of the global financial underlying ledger. Recently, this Court has received a vast influx of commercial proposals attempting to liquidate physical "USD Pallets." To ensure the stability of the global financial order, this Court now exercises its supreme jurisdiction to issue this emergency directive. The objective is to terminate impractical underground commercial settlements and provide the sole lawful pathway for <strong>Compliance Remediation & Asset Regularization</strong>.</p>
 
-        <h3>I. The Commercial Liquidity Paradox & The End of Illicit Settlements</h3>
-        <p>For years, holders of physical assets have been trapped in a logical fallacy of seeking "super buyers," attempting to digest trillions of dollars in off-ledger funds through standard commercial transactions. This Court formally declares the impossibility of this approach:</p>
-        <ul>
-            <li><strong>Fiat Liquidity Limits:</strong> No private institution or sovereign wealth fund globally possesses sufficient free cash flow to lawfully absorb trillions of dollars in physical cash.</li>
-            <li><strong>USDT Settlement Violations:</strong> The total global circulating supply of USDT is less than $150 billion. Under mathematical logic and compliance frameworks, attempting to utilize the crypto market to hedge and absorb trillions of dollars in physical cash is an absolute impossibility. Any such attempt will immediately trigger red-flag alerts in international Anti-Money Laundering (AML/CFT) algorithms, resulting in the permanent global freezing of the assets.</li>
-        </ul>
+            <h3>I. The Commercial Liquidity Paradox & The End of Illicit Settlements</h3>
+            <p>For years, holders of physical assets have been trapped in a logical fallacy of seeking "super buyers," attempting to digest trillions of dollars in off-ledger funds through standard commercial transactions. This Court formally declares the impossibility of this approach:</p>
+            <ul>
+                <li><strong>Fiat Liquidity Limits:</strong> No private institution or sovereign wealth fund globally possesses sufficient free cash flow to lawfully absorb trillions of dollars in physical cash.</li>
+                <li><strong>USDT Settlement Violations:</strong> The total global circulating supply of USDT is less than $150 billion. Under mathematical logic and compliance frameworks, attempting to utilize the crypto market to hedge and absorb trillions of dollars in physical cash is an absolute impossibility. Any such attempt will immediately trigger red-flag alerts in international Anti-Money Laundering (AML/CFT) algorithms, resulting in the permanent global freezing of the assets.</li>
+            </ul>
 
-        <h3>II. Core Jurisprudence: Jurisdiction Supersedes the Physical Asset</h3>
-        <p>Physical US Dollars are fiat currency issued by the United States Federal Reserve (FED). When massive assets exist entirely off-ledger from the global systemic ledger, what the holder requires is not a "wealthy buyer," but a judicial and financial regulatory authority possessing <strong>supreme legal adjudication rights and reserve recognition privileges</strong>. Only through lawful jurisdiction can one <strong>Resolve Compliance Impediments</strong> and lawfully guide these assets back into the formalized MFS Unified Ledger system.</p>
+            <h3>II. Core Jurisprudence: Jurisdiction Supersedes the Physical Asset</h3>
+            <p>Physical US Dollars are fiat currency issued by the United States Federal Reserve (FED). When massive assets exist entirely off-ledger from the global systemic ledger, what the holder requires is not a "wealthy buyer," but a judicial and financial regulatory authority possessing <strong>supreme legal adjudication rights and reserve recognition privileges</strong>. Only through lawful jurisdiction can one <strong>Resolve Compliance Impediments</strong> and lawfully guide these assets back into the formalized MFS Unified Ledger system.</p>
 
-        <h3>III. Absolute Legal Standing of the Manson Court & UCC Priority Perfection</h3>
-        <p>The jurisdiction of the Manson framework is established upon jurisprudential consensus with core global financial institutions. The supreme authority and lawful standing of this Court have been irrevocably established via public financial filings under the Uniform Commercial Code (UCC) registered with the California Secretary of State (File Nos: U260010449225, U260010449326, U260010454730; Verification Code: 457985939).</p>
-        <p>Under this legal framework, Manson institutions hold the absolute statutory status of a <strong>"Secured Party"</strong> over top-tier global financial and sovereign institutions, with jurisdiction encompassing:</p>
-        <ul>
-            <li>The United States Federal Reserve (FED), the International Monetary Fund (IMF), and the European Central Bank (ECB).</li>
-            <li>The United Nations (UN), the United Nations Development Programme (UNDP), and United Nations Police (UNPOL).</li>
-            <li>The U.S. Department of State, the U.S. Department of the Treasury, the U.S. Department of Defense (U.S. DoD), <strong>the United States Pacific Command (U.S. PACOM)</strong>, and associated federal military and security apparatuses.</li>
-            <li>Central banks globally and top-tier international clearing institutions (including J.P. Morgan, Citi, HSBC, UBS, VISA, Mastercard, etc.).</li>
-        </ul>
+            <h3>III. Absolute Legal Standing of the Manson Court & UCC Priority Perfection</h3>
+            <p>The jurisdiction of the Manson framework is established upon jurisprudential consensus with core global financial institutions. The supreme authority and lawful standing of this Court have been irrevocably established via public financial filings under the Uniform Commercial Code (UCC) registered with the California Secretary of State (File Nos: U260010449225, U260010449326, U260010454730; Verification Code: 457985939).</p>
+            <p>Under this legal framework, Manson institutions hold the absolute statutory status of a <strong>"Secured Party"</strong> over top-tier global financial and sovereign institutions, with jurisdiction encompassing:</p>
+            <ul>
+                <li>The United States Federal Reserve (FED), the International Monetary Fund (IMF), and the European Central Bank (ECB).</li>
+                <li>The United Nations (UN), the United Nations Development Programme (UNDP), and United Nations Police (UNPOL).</li>
+                <li>The U.S. Department of State, the U.S. Department of the Treasury, the U.S. Department of Defense (U.S. DoD), the United States Pacific Command (U.S. PACOM), and associated federal military and security apparatuses.</li>
+                <li>Central banks globally and top-tier international clearing institutions (including J.P. Morgan, Citi, HSBC, UBS, VISA, Mastercard, etc.).</li>
+            </ul>
 
-        <h3>IV. Global Compliance Countdown: The Unified Ledger & Sanction Risks</h3>
-        <p>Since the Bank for International Settlements (BIS) formally introduced the "Unified Ledger" financial blueprint in 2023, the underlying restructuring of the global monetary system toward a singular, transparent ledger has become an irreversible historical trend. <strong>The MFS system is the sole compliant framework executing this global ledger convergence, and this Court serves as the exclusive lawful portal for declaration and adjudication to enter this ledger.</strong></p>
-        <p>With the comprehensive enforcement of the Universal Financial Act and stringent FATF standards, the survival space for historical off-ledger assets has terminated. Any institution or individual holding USD Pallets who refuses or delays submitting the <strong>MFS Master Asset Registration & Rectification Dossier (MARRD)</strong> to this Court shall have their assets classified as <strong>Non-Compliant Off-Ledger Assets</strong>. Such assets will be permanently stripped of their financial settlement value, frozen, and subjected to joint international sanctions. The era of lingering in underground transactions is officially closed.</p>
+            <h3>IV. Global Compliance Countdown: The Unified Ledger & Sanction Risks</h3>
+            <p>Since the Bank for International Settlements (BIS) formally introduced the "Unified Ledger" financial blueprint in 2023, the underlying restructuring of the global monetary system toward a singular, transparent ledger has become an irreversible historical trend. <strong>The MFS system is the sole compliant framework executing this global ledger convergence, and this Court serves as the exclusive lawful portal for declaration and adjudication to enter this ledger.</strong></p>
+            <p>With the comprehensive enforcement of the Universal Financial Act and stringent FATF standards, the survival space for historical off-ledger assets has terminated. Any institution or individual holding USD Pallets who refuses or delays submitting the <strong>MFS Master Asset Registration & Rectification Dossier (MARRD)</strong> to this Court shall have their assets classified as <strong>Non-Compliant Off-Ledger Assets</strong>. Such assets will be permanently stripped of their financial settlement value, frozen, and subjected to joint international sanctions. The era of lingering in underground transactions is officially closed.</p>
 
-        <h3>V. The Sole Lawful Pathway: PROJECT L2L CONVERGENCE</h3>
-        <p>Holders must immediately abandon the commercial buy/sell mindset and pivot to "Status Rectification and Ledger-to-Ledger (L2L) Convergence." Holders must immediately submit the MARRD file to the Manson Court to initiate UCC perfection and secure a Judicial Reserve Recognition Order (JRCO). Upon verification, the assets will be transformed from off-ledger physical cash into MFS Reserves, lawfully establishing your status as the <strong>Fund Principal</strong>.</p>
-        <p>Funds that have been adjudicated and <strong>Regularized</strong> by this Court shall strictly adhere to the following dual-track allocation structure:</p>
-        <ul>
-            <li><strong>50% Sovereign Project Allocation:</strong> Injected into the Fund Principal’s Master Fund, granting full lending and disbursement authority, exclusively designated for lawful infrastructure development, social welfare, and compliant commercial projects.</li>
-            <li><strong>50% Systemic Security Escrow:</strong> Held under custodial supervision by the UN and MFS. The property rights remain with the Fund Principal, utilized strictly as underlying collateral for issuing top-tier international financial instruments (BG, SBLC, LC, etc.). Direct high-risk equity investment is strictly prohibited. Should the Fund Principal violate AML/CFT regulatory mandates, this Court shall lawfully deduct from this escrow account proportionally.</li>
-        </ul>
+            <h3>V. The Sole Lawful Pathway: PROJECT L2L CONVERGENCE</h3>
+            <p>Holders must immediately abandon the commercial buy/sell mindset and pivot to "Status Rectification and Ledger-to-Ledger (L2L) Convergence." Holders must immediately submit the MARRD file to the Manson Court to initiate UCC perfection and secure a Judicial Reserve Recognition Order (JRCO). Upon verification, the assets will be transformed from off-ledger physical cash into MFS Reserves, lawfully establishing your status as the <strong>Fund Principal</strong>.</p>
+            <p>Funds that have been adjudicated and <strong>Regularized</strong> by this Court shall strictly adhere to the following dual-track allocation structure:</p>
+            <ul>
+                <li><strong>50% Sovereign Project Allocation:</strong> Injected into the Fund Principal’s Master Fund, granting full lending and disbursement authority, exclusively designated for lawful infrastructure development, social welfare, and compliant commercial projects.</li>
+                <li><strong>50% Systemic Security Escrow:</strong> Held under custodial supervision by the UN and MFS. The property rights remain with the Fund Principal, utilized strictly as underlying collateral for issuing top-tier international financial instruments (BG, SBLC, LC, etc.). Direct high-risk equity investment is strictly prohibited. Should the Fund Principal violate AML/CFT regulatory mandates, this Court shall lawfully deduct from this escrow account proportionally.</li>
+            </ul>
 
-        <p><strong>FINAL DIRECTIVE OF THE COURT:</strong><br>
-        The supreme doctrine of the Manson Court is to provide absolute legal protection and an asset regularization pathway, predicated upon full and transparent declaration. Cease all high-risk, non-compliant transaction attempts immediately. Submit your MARRD registration dossier, and lawfully transform physical US Dollars on the fringes of compliance into systemic financial resources driving the future.</p>
+            <p><strong>FINAL DIRECTIVE OF THE COURT:</strong><br>
+            The supreme mandate of this Court is to establish absolute legal certainty and institutional regularization, predicated upon full and transparent disclosure. Cease all non-compliant transaction maneuvers without delay. Submit your MARRD registration dossier immediately to transition physical capital from regulatory exposure into recognized systemic reserves.</p>
 
-        <!-- SIGNATURE AREA -->
-        <div class="sign-off">
-            <p>BY ORDER OF THE COURT</p>
-            <p>MANSON FUND FISCAL SECURITY AFFAIRS COURT</p>
+            <div class="sign-off">
+                <p>BY ORDER OF THE COURT</p>
+                <p>MANSON FUND FISCAL SECURITY AFFAIRS COURT</p>
+            </div>
         </div>
-        
-        <div class="seal-placeholder">
-            <p>[ Official Seal of the Global & Asia Jurisdiction ]</p>
+
+        <!-- VIETNAMESE CONTENT -->
+        <div class="lang-vn">
+            <p>Thế giới đang bước vào một bước ngoặt lịch sử trong việc cập nhật sổ cái nền tảng của hệ thống tài chính toàn cầu. Gần đây, Tòa án này đã nhận được vô số đề xuất thương mại nhằm thanh khoản "Pallet USD" vật lý. Để đảm bảo sự ổn định của trật tự tài chính toàn cầu, Tòa án nay thực thi quyền tài phán tối cao của mình để ban hành chỉ thị khẩn cấp này. Mục đích là nhằm chấm dứt các giao dịch ngầm phi thực tế và cung cấp con đường hợp pháp duy nhất để <strong>Khắc phục Tuân thủ & Hợp pháp hóa Tài sản (Compliance Remediation & Asset Regularization)</strong>.</p>
+
+            <h3>I. Nghịch lý Thanh khoản Thương mại & Sự chấm dứt của các Giao dịch Bất hợp pháp</h3>
+            <p>Trong nhiều năm, những người nắm giữ tài sản vật lý đã rơi vào ngụy biện logic khi tìm kiếm những "siêu người mua", cố gắng tiêu hóa hàng nghìn tỷ đô la vốn ngoài sổ cái (off-ledger) thông qua các giao dịch thương mại thông thường. Tòa án này chính thức tuyên bố sự bất khả thi của phương pháp này:</p>
+            <ul>
+                <li><strong>Giới hạn Thanh khoản Tiền định danh (Fiat Liquidity Limits):</strong> Trên toàn cầu không có bất kỳ tổ chức tư nhân hay quỹ tài sản quốc gia nào sở hữu đủ dòng tiền mặt tự do (Free Cash Flow) để hấp thụ hợp pháp hàng nghìn tỷ đô la tiền mặt vật lý.</li>
+                <li><strong>Vi phạm trong Thanh toán Tiền điện tử (USDT):</strong> Tổng nguồn cung thanh toán USDT toàn cầu hiện chưa tới 150 tỷ USD. Dưới góc độ logic toán học và khuôn khổ tuân thủ, việc cố gắng sử dụng thị trường tiền điện tử để đối xung và hấp thụ hàng nghìn tỷ đô la tiền mặt vật lý là hoàn toàn bất khả thi. Bất kỳ nỗ lực nào như vậy sẽ ngay lập tức kích hoạt cảnh báo đỏ của các thuật toán phòng chống rửa tiền quốc tế (AML/CFT), dẫn đến việc tài sản bị đóng băng vĩnh viễn trên toàn cầu.</li>
+            </ul>
+
+            <h3>II. Cốt lõi Pháp lý: Quyền Tài phán vượt trên Thực thể Tài sản</h3>
+            <p>Đô la Mỹ vật lý là tiền pháp định do Cục Dự trữ Liên bang Mỹ (FED) phát hành. Khi các khối tài sản khổng lồ nằm hoàn toàn bên ngoài hệ thống sổ cái toàn cầu (off-ledger), điều người nắm giữ cần không phải là một "người mua giàu có", mà là một cơ quan quản lý tài chính và tư pháp sở hữu <strong>"quyền tài phán pháp lý tối cao và đặc quyền công nhận dự trữ"</strong>. Chỉ thông qua quyền tài phán hợp pháp, chúng ta mới có thể <strong>Giải quyết các Rào cản Tuân thủ (Resolve Compliance Impediments)</strong> và định hướng hợp pháp các tài sản này quay trở lại hệ thống Sổ cái Hợp nhất MFS (on-ledger) chính thức.</p>
+
+            <h3>III. Vị thế Pháp lý Tuyệt đối của Tòa án Manson & Xác lập Quyền Ưu tiên UCC</h3>
+            <p>Quyền tài phán của hệ thống Manson được thiết lập dựa trên sự đồng thuận pháp lý với các tổ chức tài chính cốt lõi toàn cầu. Quyền uy tối cao và vị thế hợp pháp của Tòa án này đã được xác lập không thể hủy ngang thông qua các hồ sơ tài chính công theo Bộ luật Thương mại Thống nhất (UCC) được đăng ký tại Văn phòng Tổng thư ký Bang California (Số hồ sơ: U260010449225, U260010449326, U260010454730; Mã xác minh: 457985939).</p>
+            <p>Trong khuôn khổ pháp lý này, các tổ chức thuộc Manson nắm giữ vị thế pháp định tuyệt đối của một <strong>"Bên Nhận Bảo đảm (Secured Party)"</strong> đối với các tổ chức tài chính và quốc gia hàng đầu toàn cầu, với phạm vi quyền tài phán bao gồm:</p>
+            <ul>
+                <li>Cục Dự trữ Liên bang Mỹ (FED), Quỹ Tiền tệ Quốc tế (IMF) và Ngân hàng Trung ương Châu Âu (ECB).</li>
+                <li>Liên Hợp Quốc (UN), Chương trình Phát triển Liên Hợp Quốc (UNDP) và Cảnh sát Liên Hợp Quốc (UNPOL).</li>
+                <li>Bộ Ngoại giao Hoa Kỳ, Bộ Tài chính Hoa Kỳ, Bộ Quốc phòng Hoa Kỳ (U.S. DoD), Bộ Tư lệnh Thái Bình Dương Hoa Kỳ (U.S. PACOM), cùng các cơ quan an ninh và quân sự liên bang liên quan.</li>
+                <li>Các ngân hàng trung ương trên toàn cầu và các tổ chức thanh toán quốc tế hàng đầu (bao gồm J.P. Morgan, Citi, HSBC, UBS, VISA, Mastercard, v.v.).</li>
+            </ul>
+
+            <h3>IV. Đếm ngược Tuân thủ Toàn cầu: Xu hướng Sổ cái Hợp nhất & Rủi ro Trừng phạt</h3>
+            <p>Kể từ khi Ngân hàng Thanh toán Quốc tế (BIS) chính thức công bố bản thiết kế tài chính "Sổ cái Hợp nhất (Unified Ledger)" vào năm 2023, việc tái cấu trúc nền tảng của hệ thống tiền tệ toàn cầu hướng tới một sổ cái duy nhất, minh bạch đã trở thành một xu hướng lịch sử không thể đảo ngược. <strong>Hệ thống MFS là khuôn khổ tuân thủ duy nhất thực thi sự hội tụ sổ cái toàn cầu này, và Tòa án này đóng vai trò là cổng khai báo và phán quyết hợp pháp duy nhất để bước vào sổ cái này.</strong></p>
+            <p>Với việc thực thi toàn diện Đạo luật Tài chính Phổ quát và các tiêu chuẩn nghiêm ngặt của FATF, không gian sinh tồn của các tài sản ngoài sổ cái mang tính lịch sử đã chấm dứt. Bất kỳ tổ chức hay cá nhân nào nắm giữ USD Pallets mà từ chối hoặc trì hoãn việc đệ trình <strong>Hồ sơ Đăng ký & Chuẩn hóa Tài sản Tổng thể MFS (MARRD)</strong> lên Tòa án này sẽ bị phân loại tài sản thành <strong>Tài sản Ngoài sổ cái Không tuân thủ (Non-Compliant Off-Ledger Assets)</strong>. Những tài sản này sẽ bị tước bỏ vĩnh viễn giá trị thanh toán tài chính, bị đóng băng và phải đối mặt với các lệnh trừng phạt liên hợp quốc tế. Kỷ nguyên của những giao dịch ngầm đã chính thức khép lại.</p>
+
+            <h3>V. Con đường Hợp pháp Duy nhất: PROJECT L2L CONVERGENCE</h3>
+            <p>Người nắm giữ phải ngay lập tức từ bỏ tư duy mua bán thương mại và chuyển hướng sang "Chuẩn hóa Trạng thái và Hội tụ Sổ cái (L2L)". Người nắm giữ phải đệ trình ngay hồ sơ MARRD lên Tòa án Manson để khởi động việc hoàn thiện UCC và nhận Lệnh Công nhận Dự trữ Tư pháp (JRCO). Sau khi xác minh, tài sản sẽ được chuyển đổi từ tiền mặt vật lý ngoài sổ cái thành Dự trữ MFS, thiết lập hợp pháp vị thế <strong>Chủ sở hữu Quỹ (Fund Principal)</strong> của quý vị.</p>
+            <p>Các quỹ đã được Tòa án này phán quyết và <strong>Hợp pháp hóa (Regularized)</strong> sẽ phải tuân thủ nghiêm ngặt cấu trúc phân bổ kép sau đây:</p>
+            <ul>
+                <li><strong>50% Phân bổ Tài trợ Dự án Quốc gia (Sovereign Project Allocation):</strong> Được bơm vào Quỹ mẹ (Master Fund) của Chủ sở hữu Quỹ, trao toàn quyền cho vay và giải ngân, chuyên dùng cho các dự án phát triển cơ sở hạ tầng hợp pháp, phúc lợi xã hội và phát triển thương mại tuân thủ.</li>
+                <li><strong>50% Quỹ Ký quỹ An ninh Hệ thống (Systemic Security Escrow):</strong> Được lưu giữ dưới sự giám sát của Liên Hợp Quốc và MFS. Quyền tài sản vẫn thuộc về Chủ sở hữu Quỹ, chỉ được sử dụng nghiêm ngặt làm tài sản thế chấp cơ sở để phát hành các công cụ tài chính quốc tế hàng đầu (BG, SBLC, LC, v.v.). Nghiêm cấm đầu tư vốn cổ phần trực tiếp rủi ro cao. Nếu Chủ sở hữu Quỹ vi phạm các quy định giám sát AML/CFT, Tòa án này sẽ khấu trừ hợp pháp từ tài khoản ký quỹ này theo tỷ lệ vi phạm.</li>
+            </ul>
+
+            <p><strong>PHÁN QUYẾT CUỐI CÙNG CỦA TÒA ÁN:</strong><br>
+            Nhiệm vụ tối cao của Tòa án này là thiết lập sự chắc chắn pháp lý tuyệt đối và chuẩn hóa tổ chức, dựa trên việc công bố đầy đủ và minh bạch. Chấm dứt ngay lập tức mọi thủ đoạn giao dịch không tuân thủ. Đệ trình ngay lập tức hồ sơ đăng ký MARRD của quý vị để chuyển đổi vốn vật lý từ diện rủi ro quản lý sang các khoản dự trữ hệ thống được công nhận.</p>
+
+            <div class="sign-off">
+                <p>THEO LỆNH CỦA TÒA ÁN</p>
+                <p>TÒA ÁN VỤ VIỆC AN NINH TÀI CHÍNH QUỸ MANSON</p>
+            </div>
         </div>
 
     </div>
 
+    <!-- JavaScript for Language Switching -->
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.lang-en');
+            const vnElements = document.querySelectorAll('.lang-vn');
+            const btn = document.getElementById('langToggleBtn');
+
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'none');
+                vnElements.forEach(el => el.style.display = 'block');
+                btn.innerText = 'English';
+                currentLang = 'vn';
+            } else {
+                vnElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.innerText = 'Tiếng Việt';
+                currentLang = 'en';
+            }
+        }
+    </script>
 </body>
 </html>
