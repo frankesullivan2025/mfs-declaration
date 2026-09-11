@@ -55,10 +55,12 @@
             margin-bottom: 30px;
         }
 
+        /* 修正：強制 LOGO 成為區塊並置中 */
         .logo {
+            display: block;
+            margin: 0 auto 15px auto;
             width: 140px;
             height: auto;
-            margin-bottom: 15px;
         }
 
         .header h1 {
@@ -122,11 +124,15 @@
             margin: 5px 0;
         }
 
-        /* 語系顯示控制 */
+        /* 修正：語系顯示控制分離 (標題區塊 vs. 內文同行) */
         .lang-content { display: none; }
-        .lang-active { display: block; }
+        .lang-content.active { display: block; }
+        
+        .block-lang { display: none; }
+        .block-lang.active { display: block; }
+        
         .inline-lang { display: none; }
-        .inline-active { display: inline; }
+        .inline-lang.active { display: inline; }
 
         @media (max-width: 600px) {
             .document-container { padding: 30px 20px; }
@@ -146,72 +152,71 @@
                 <option value="vn">Tiếng Việt</option>
                 <option value="ja">日本語</option>
                 <option value="ko">한국어</option>
-                <!-- 這裡預留了未來放入俄文、法文、西文的空間 -->
             </select>
         </div>
 
         <!-- HEADER SECTION -->
         <div class="header">
-            <!-- 修正檔名為 manson-logo.png -->
             <img src="manson-logo.png" alt="Manson Court Seal" class="logo">
             
-            <h1 class="inline-lang inline-active" data-lang="en">OFFICIAL COURT DIRECTIVE</h1>
-            <h1 class="inline-lang" data-lang="vn">CHỈ THỊ CỦA TÒA ÁN</h1>
-            <h1 class="inline-lang" data-lang="ja">裁判所公式指令</h1>
-            <h1 class="inline-lang" data-lang="ko">공식 법정 명령</h1>
+            <!-- 修正：標題改用 block-lang -->
+            <h1 class="block-lang active" data-lang="en">OFFICIAL COURT DIRECTIVE</h1>
+            <h1 class="block-lang" data-lang="vn">CHỈ THỊ CỦA TÒA ÁN</h1>
+            <h1 class="block-lang" data-lang="ja">裁判所公式指令</h1>
+            <h1 class="block-lang" data-lang="ko">공식 법정 명령</h1>
             
-            <h2 class="inline-lang inline-active" data-lang="en">Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
-            <h2 class="inline-lang" data-lang="vn">Chỉ thị Công nhận Dự trữ Tư pháp & Chuẩn hóa Tuân thủ Toàn cầu</h2>
-            <h2 class="inline-lang" data-lang="ja">グローバル司法準備金認定およびコンプライアンス是正指令</h2>
-            <h2 class="inline-lang" data-lang="ko">글로벌 사법 준비금 승인 및 규정 준수 정상화 명령</h2>
+            <h2 class="block-lang active" data-lang="en">Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
+            <h2 class="block-lang" data-lang="vn">Chỉ thị Công nhận Dự trữ Tư pháp & Chuẩn hóa Tuân thủ Toàn cầu</h2>
+            <h2 class="block-lang" data-lang="ja">グローバル司法準備金認定およびコンプライアンス是正指令</h2>
+            <h2 class="block-lang" data-lang="ko">글로벌 사법 준비금 승인 및 규정 준수 정상화 명령</h2>
         </div>
 
         <!-- META INFORMATION -->
         <div class="meta-info">
             <p>
-                <strong class="inline-lang inline-active" data-lang="en">ISSUING AUTHORITY:</strong>
+                <strong class="inline-lang active" data-lang="en">ISSUING AUTHORITY:</strong>
                 <strong class="inline-lang" data-lang="vn">CƠ QUAN BAN HÀNH:</strong>
                 <strong class="inline-lang" data-lang="ja">発行機関:</strong>
                 <strong class="inline-lang" data-lang="ko">발행 기관:</strong>
-                <span class="inline-lang inline-active" data-lang="en">Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</span>
+                <span class="inline-lang active" data-lang="en">Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</span>
                 <span class="inline-lang" data-lang="vn">Tòa án Vụ việc An ninh Tài chính Quỹ Manson & Trụ sở Toàn cầu Tiêu chuẩn Tiền tệ Tương lai (MFS).</span>
                 <span class="inline-lang" data-lang="ja">マンソン基金財政安全保障問題裁判所 および 未来通貨基準 (MFS) グローバル本部</span>
                 <span class="inline-lang" data-lang="ko">맨슨 기금 재정 안보 사건 법원 및 미래 통화 표준 (MFS) 글로벌 본부</span>
             </p>
             <p>
-                <strong class="inline-lang inline-active" data-lang="en">LOCATION:</strong>
+                <strong class="inline-lang active" data-lang="en">LOCATION:</strong>
                 <strong class="inline-lang" data-lang="vn">ĐỊA ĐIỂM:</strong>
                 <strong class="inline-lang" data-lang="ja">所在地:</strong>
                 <strong class="inline-lang" data-lang="ko">소재지:</strong>
-                <span class="inline-lang inline-active" data-lang="en">London, United Kingdom</span>
+                <span class="inline-lang active" data-lang="en">London, United Kingdom</span>
                 <span class="inline-lang" data-lang="vn">London, Vương quốc Anh.</span>
                 <span class="inline-lang" data-lang="ja">英国、ロンドン</span>
                 <span class="inline-lang" data-lang="ko">영국, 런던</span>
             </p>
             <p>
-                <strong class="inline-lang inline-active" data-lang="en">EFFECTIVE DATE:</strong>
+                <strong class="inline-lang active" data-lang="en">EFFECTIVE DATE:</strong>
                 <strong class="inline-lang" data-lang="vn">NGÀY CÓ HIỆU LỰC:</strong>
                 <strong class="inline-lang" data-lang="ja">発効日:</strong>
                 <strong class="inline-lang" data-lang="ko">발효일:</strong>
-                <span class="inline-lang inline-active" data-lang="en">September 9, 2026</span>
+                <span class="inline-lang active" data-lang="en">September 9, 2026</span>
                 <span class="inline-lang" data-lang="vn">09 tháng 09 năm 2026.</span>
                 <span class="inline-lang" data-lang="ja">2026年9月9日</span>
                 <span class="inline-lang" data-lang="ko">2026년 9월 9일</span>
             </p>
             <p>
-                <strong class="inline-lang inline-active" data-lang="en">APPLICABILITY:</strong>
+                <strong class="inline-lang active" data-lang="en">APPLICABILITY:</strong>
                 <strong class="inline-lang" data-lang="vn">ĐỐI TƯỢNG ÁP DỤNG:</strong>
                 <strong class="inline-lang" data-lang="ja">適用対象:</strong>
                 <strong class="inline-lang" data-lang="ko">적용 대상:</strong>
-                <span class="inline-lang inline-active" data-lang="en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span>
+                <span class="inline-lang active" data-lang="en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span>
                 <span class="inline-lang" data-lang="vn">Tất cả các tổ chức, cá nhân được ủy thác và người thụ hưởng cuối cùng trên toàn cầu đang nắm giữ, bảo quản hoặc quản lý tài sản Đô la Mỹ vật lý (USD Pallets), bao gồm toàn bộ hồ sơ nguồn gốc và thông quan loại 17, 21 hoặc 24.</span>
                 <span class="inline-lang" data-lang="ja">物理的な米ドルパレット（完全な17、21、または24文書パッケージを含む）を保持、保管、または管理する世界中のすべての事業体、受託者、および最終的受益者。</span>
-                <span class="inline-lang" data-lang="ko">실물 미국 달러 팔레트(완전한 17, 21 또는 24 문서 패키지 포함)를 보유, 보관 또는 관리하는 전 전 세계 모든 법인, 수탁자 및 최종 실소유자.</span>
+                <span class="inline-lang" data-lang="ko">실물 미국 달러 팔레트(완전한 17, 21 또는 24 문서 패키지 포함)를 보유, 보관 또는 관리하는 전 세계 모든 법인, 수탁자 및 최종 실소유자.</span>
             </p>
         </div>
 
         <!-- 1. ENGLISH CONTENT -->
-        <div class="lang-content lang-active" data-lang="en">
+        <div class="lang-content active" data-lang="en">
             <p>The world is entering a historic turning point in the systemic update of the global financial underlying ledger. Recently, this Court has received a vast influx of commercial proposals attempting to liquidate physical "USD Pallets." To ensure the stability of the global financial order, this Court now exercises its supreme jurisdiction to issue this emergency directive. The objective is to terminate impractical underground commercial settlements and provide the sole lawful pathway for <strong>Compliance Remediation & Asset Regularization</strong>.</p>
             <h3>I. The Commercial Liquidity Paradox & The End of Illicit Settlements</h3>
             <p>For years, holders of physical assets have been trapped in a logical fallacy of seeking "super buyers," attempting to digest trillions of dollars in off-ledger funds through standard commercial transactions. This Court formally declares the impossibility of this approach:</p>
@@ -364,28 +369,38 @@
 
     </div>
 
-    <!-- 切換語言的 JavaScript 引擎 -->
+    <!-- 修正版：切換語言的 JavaScript 引擎 -->
     <script>
         function switchLanguage() {
             const selectedLang = document.getElementById('languageSelect').value;
             
-            // 切換下方內容區塊
+            // 1. 切換下方內容區塊
             const contentBlocks = document.querySelectorAll('.lang-content');
             contentBlocks.forEach(block => {
                 if (block.getAttribute('data-lang') === selectedLang) {
-                    block.classList.add('lang-active');
+                    block.classList.add('active');
                 } else {
-                    block.classList.remove('lang-active');
+                    block.classList.remove('active');
                 }
             });
 
-            // 切換上方的標題與屬性欄位 (Inline Elements)
+            // 2. 切換上方的標題區塊 (Block Elements)
+            const blockElements = document.querySelectorAll('.block-lang');
+            blockElements.forEach(el => {
+                if (el.getAttribute('data-lang') === selectedLang) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            // 3. 切換上方的屬性欄位 (Inline Elements)
             const inlineElements = document.querySelectorAll('.inline-lang');
             inlineElements.forEach(el => {
                 if (el.getAttribute('data-lang') === selectedLang) {
-                    el.classList.add('inline-active');
+                    el.classList.add('active');
                 } else {
-                    el.classList.remove('inline-active');
+                    el.classList.remove('active');
                 }
             });
         }
