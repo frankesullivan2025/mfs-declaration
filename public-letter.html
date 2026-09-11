@@ -26,7 +26,7 @@
             position: relative;
         }
 
-        /* 升級版：下拉式選單樣式 */
+        /* 下拉式選單樣式 */
         .lang-selector {
             position: absolute;
             top: 30px;
@@ -139,20 +139,21 @@
 <body>
 
     <div class="document-container">
-        <!-- 升級版：語言下拉選單 -->
+        <!-- 語言下拉選單 -->
         <div class="lang-selector">
             <select id="languageSelect" onchange="switchLanguage()">
-                <option value="en">English (英文)</option>
-                <option value="vn">Tiếng Việt (越南文)</option>
-                <option value="ja">日本語 (日文)</option>
-                <option value="ko">한국어 (韓文)</option>
+                <option value="en">English</option>
+                <option value="vn">Tiếng Việt</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
                 <!-- 這裡預留了未來放入俄文、法文、西文的空間 -->
             </select>
         </div>
 
         <!-- HEADER SECTION -->
         <div class="header">
-            <img src="logo.png" alt="Manson Court Seal" class="logo">
+            <!-- 修正檔名為 manson-logo.png -->
+            <img src="manson-logo.png" alt="Manson Court Seal" class="logo">
             
             <h1 class="inline-lang inline-active" data-lang="en">OFFICIAL COURT DIRECTIVE</h1>
             <h1 class="inline-lang" data-lang="vn">CHỈ THỊ CỦA TÒA ÁN</h1>
@@ -205,7 +206,7 @@
                 <span class="inline-lang inline-active" data-lang="en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span>
                 <span class="inline-lang" data-lang="vn">Tất cả các tổ chức, cá nhân được ủy thác và người thụ hưởng cuối cùng trên toàn cầu đang nắm giữ, bảo quản hoặc quản lý tài sản Đô la Mỹ vật lý (USD Pallets), bao gồm toàn bộ hồ sơ nguồn gốc và thông quan loại 17, 21 hoặc 24.</span>
                 <span class="inline-lang" data-lang="ja">物理的な米ドルパレット（完全な17、21、または24文書パッケージを含む）を保持、保管、または管理する世界中のすべての事業体、受託者、および最終的受益者。</span>
-                <span class="inline-lang" data-lang="ko">실물 미국 달러 팔레트(완전한 17, 21 또는 24 문서 패키지 포함)를 보유, 보관 또는 관리하는 전 세계 모든 법인, 수탁자 및 최종 실소유자.</span>
+                <span class="inline-lang" data-lang="ko">실물 미국 달러 팔레트(완전한 17, 21 또는 24 문서 패키지 포함)를 보유, 보관 또는 관리하는 전 전 세계 모든 법인, 수탁자 및 최종 실소유자.</span>
             </p>
         </div>
 
@@ -363,7 +364,7 @@
 
     </div>
 
-    <!-- 升級版：切換語言的 JavaScript 引擎 -->
+    <!-- 切換語言的 JavaScript 引擎 -->
     <script>
         function switchLanguage() {
             const selectedLang = document.getElementById('languageSelect').value;
