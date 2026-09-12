@@ -15,7 +15,6 @@
             display: flex;
             justify-content: center;
         }
-
         .document-container {
             background-color: #ffffff;
             max-width: 850px;
@@ -25,14 +24,11 @@
             border: 1px solid #ccc;
             position: relative;
         }
-
-        /* 下拉式選單樣式 */
         .lang-selector {
             position: absolute;
             top: 30px;
             right: 30px;
         }
-        
         .lang-selector select {
             padding: 6px 10px;
             font-family: "Times New Roman", Times, serif;
@@ -43,49 +39,40 @@
             cursor: pointer;
             outline: none;
         }
-
         .lang-selector select:hover {
             background-color: #f9f9f9;
         }
-
         .header {
             text-align: center;
             border-bottom: 2px solid #000;
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
-
-        /* 修正：強制 LOGO 成為區塊並置中 */
         .logo {
             display: block;
             margin: 0 auto 15px auto;
             width: 140px;
             height: auto;
         }
-
         .header h1 {
             font-size: 24px;
             font-weight: bold;
             margin: 5px 0;
             letter-spacing: 1px;
         }
-
         .header h2 {
             font-size: 18px;
             font-weight: normal;
             margin: 5px 0;
         }
-
         .meta-info {
             text-align: left;
             margin-bottom: 30px;
             font-size: 14px;
         }
-
         .meta-info p {
             margin: 4px 0;
         }
-
         h3 {
             font-size: 18px;
             text-transform: uppercase;
@@ -94,46 +81,36 @@
             border-bottom: 1px solid #000;
             display: inline-block;
         }
-
         p {
             font-size: 15px;
             text-align: justify;
             margin-bottom: 15px;
         }
-
         ul {
             margin-top: 5px;
             margin-bottom: 20px;
             padding-left: 20px;
         }
-
         li {
             font-size: 15px;
             margin-bottom: 8px;
             text-align: justify;
         }
-
         .sign-off {
             margin-top: 60px;
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
         }
-        
         .sign-off p {
             margin: 5px 0;
         }
-
-        /* 修正：語系顯示控制分離 (標題區塊 vs. 內文同行) */
         .lang-content { display: none; }
         .lang-content.active { display: block; }
-        
         .block-lang { display: none; }
         .block-lang.active { display: block; }
-        
         .inline-lang { display: none; }
         .inline-lang.active { display: inline; }
-
         @media (max-width: 600px) {
             .document-container { padding: 30px 20px; }
             .header h1 { font-size: 20px; }
@@ -145,73 +122,89 @@
 <body>
 
     <div class="document-container">
-        <!-- 語言下拉選單 -->
         <div class="lang-selector">
             <select id="languageSelect" onchange="switchLanguage()">
                 <option value="en">English</option>
                 <option value="vn">Tiếng Việt</option>
                 <option value="ja">日本語</option>
                 <option value="ko">한국어</option>
+                <option value="ru">Русский</option>
+                <option value="fr">Français</option>
             </select>
         </div>
 
-        <!-- HEADER SECTION -->
         <div class="header">
             <img src="manson-logo.png" alt="Manson Court Seal" class="logo">
-            
-            <!-- 修正：標題改用 block-lang -->
             <h1 class="block-lang active" data-lang="en">OFFICIAL COURT DIRECTIVE</h1>
             <h1 class="block-lang" data-lang="vn">CHỈ THỊ CỦA TÒA ÁN</h1>
             <h1 class="block-lang" data-lang="ja">裁判所公式指令</h1>
             <h1 class="block-lang" data-lang="ko">공식 법정 명령</h1>
-            
+            <h1 class="block-lang" data-lang="ru">ОФИЦИАЛЬНАЯ ДИРЕКТИВА СУДА</h1>
+            <h1 class="block-lang" data-lang="fr">DIRECTIVE OFFICIELLE DU TRIBUNAL</h1>
             <h2 class="block-lang active" data-lang="en">Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
             <h2 class="block-lang" data-lang="vn">Chỉ thị Công nhận Dự trữ Tư pháp & Chuẩn hóa Tuân thủ Toàn cầu</h2>
             <h2 class="block-lang" data-lang="ja">グローバル司法準備金認定およびコンプライアンス是正指令</h2>
             <h2 class="block-lang" data-lang="ko">글로벌 사법 준비금 승인 및 규정 준수 정상화 명령</h2>
+            <h2 class="block-lang" data-lang="ru">Глобальная директива о признании судебных резервов и нормализации комплаенса</h2>
+            <h2 class="block-lang" data-lang="fr">Directive mondiale sur la reconnaissance des réserves judiciaires et la régularisation de la conformité</h2>
         </div>
 
-        <!-- META INFORMATION -->
         <div class="meta-info">
             <p>
                 <strong class="inline-lang active" data-lang="en">ISSUING AUTHORITY:</strong>
                 <strong class="inline-lang" data-lang="vn">CƠ QUAN BAN HÀNH:</strong>
                 <strong class="inline-lang" data-lang="ja">発行機関:</strong>
                 <strong class="inline-lang" data-lang="ko">발행 기관:</strong>
+                <strong class="inline-lang" data-lang="ru">ИЗДАЮЩИЙ ОРГАН:</strong>
+                <strong class="inline-lang" data-lang="fr">AUTORITÉ ÉMETTRICE :</strong>
                 <span class="inline-lang active" data-lang="en">Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</span>
                 <span class="inline-lang" data-lang="vn">Tòa án Vụ việc An ninh Tài chính Quỹ Manson & Trụ sở Toàn cầu Tiêu chuẩn Tiền tệ Tương lai (MFS).</span>
                 <span class="inline-lang" data-lang="ja">マンソン基金財政安全保障問題裁判所 および 未来通貨基準 (MFS) グローバル本部</span>
                 <span class="inline-lang" data-lang="ko">맨슨 기금 재정 안보 사건 법원 및 미래 통화 표준 (MFS) 글로벌 본부</span>
+                <span class="inline-lang" data-lang="ru">Суд по делам финансовой безопасности фонда Manson и Глобальная штаб-квартира стандартов будущего монетарной системы (MFS)</span>
+                <span class="inline-lang" data-lang="fr">Tribunal des affaires de sécurité financière du fonds Manson & Siège mondial des normes monétaires futures (MFS)</span>
             </p>
             <p>
                 <strong class="inline-lang active" data-lang="en">LOCATION:</strong>
                 <strong class="inline-lang" data-lang="vn">ĐỊA ĐIỂM:</strong>
                 <strong class="inline-lang" data-lang="ja">所在地:</strong>
                 <strong class="inline-lang" data-lang="ko">소재지:</strong>
+                <strong class="inline-lang" data-lang="ru">МЕСТОНАХОЖДЕНИЕ:</strong>
+                <strong class="inline-lang" data-lang="fr">EMPLACEMENT :</strong>
                 <span class="inline-lang active" data-lang="en">London, United Kingdom</span>
                 <span class="inline-lang" data-lang="vn">London, Vương quốc Anh.</span>
                 <span class="inline-lang" data-lang="ja">英国、ロンドン</span>
                 <span class="inline-lang" data-lang="ko">영국, 런던</span>
+                <span class="inline-lang" data-lang="ru">Лондон, Великобритания</span>
+                <span class="inline-lang" data-lang="fr">Londres, Royaume-Uni</span>
             </p>
             <p>
                 <strong class="inline-lang active" data-lang="en">EFFECTIVE DATE:</strong>
                 <strong class="inline-lang" data-lang="vn">NGÀY CÓ HIỆU LỰC:</strong>
                 <strong class="inline-lang" data-lang="ja">発効日:</strong>
                 <strong class="inline-lang" data-lang="ko">발효일:</strong>
+                <strong class="inline-lang" data-lang="ru">ДАТА ВСТУПЛЕНИЯ В СИЛУ:</strong>
+                <strong class="inline-lang" data-lang="fr">DATE D'ENTRÉE EN VIGUEUR :</strong>
                 <span class="inline-lang active" data-lang="en">September 9, 2026</span>
                 <span class="inline-lang" data-lang="vn">09 tháng 09 năm 2026.</span>
                 <span class="inline-lang" data-lang="ja">2026年9月9日</span>
                 <span class="inline-lang" data-lang="ko">2026년 9월 9일</span>
+                <span class="inline-lang" data-lang="ru">9 сентября 2026 г.</span>
+                <span class="inline-lang" data-lang="fr">9 septembre 2026</span>
             </p>
             <p>
                 <strong class="inline-lang active" data-lang="en">APPLICABILITY:</strong>
                 <strong class="inline-lang" data-lang="vn">ĐỐI TƯỢNG ÁP DỤNG:</strong>
                 <strong class="inline-lang" data-lang="ja">適用対象:</strong>
                 <strong class="inline-lang" data-lang="ko">적용 대상:</strong>
+                <strong class="inline-lang" data-lang="ru">ПРИМЕНИМОСТЬ:</strong>
+                <strong class="inline-lang" data-lang="fr">APPLICABILITÉ :</strong>
                 <span class="inline-lang active" data-lang="en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span>
                 <span class="inline-lang" data-lang="vn">Tất cả các tổ chức, cá nhân được ủy thác và người thụ hưởng cuối cùng trên toàn cầu đang nắm giữ, bảo quản hoặc quản lý tài sản Đô la Mỹ vật lý (USD Pallets), bao gồm toàn bộ hồ sơ nguồn gốc và thông quan loại 17, 21 hoặc 24.</span>
                 <span class="inline-lang" data-lang="ja">物理的な米ドルパレット（完全な17、21、または24文書パッケージを含む）を保持、保管、または管理する世界中のすべての事業体、受託者、および最終的受益者。</span>
                 <span class="inline-lang" data-lang="ko">실물 미국 달러 팔레트(완전한 17, 21 또는 24 문서 패키지 포함)를 보유, 보관 또는 관리하는 전 세계 모든 법인, 수탁자 및 최종 실소유자.</span>
+                <span class="inline-lang" data-lang="ru">Все глобальные организации, фидуциарии, доверительные управляющие и конечные бенефициарные владельцы, которые хранят, защищают или управляют физическими паллетами долларов США (USD Pallets), включая полные пакеты документов 17, 21 или 24 DOCS.</span>
+                <span class="inline-lang" data-lang="fr">Toutes les entités mondiales, fiduciaires et bénéficiaires effectifs finaux détenant, sauvegardant ou administrant des palettes physiques de dollars américains (USD Pallets), y compris les dossiers complets de type 17, 21 ou 24 DOCS.</span>
             </p>
         </div>
 
@@ -367,14 +360,87 @@
             </div>
         </div>
 
+        <!-- 5. RUSSIAN CONTENT -->
+        <div class="lang-content" data-lang="ru">
+            <p>Мир вступает в исторический поворотный момент системного обновления базового глобального финансового реестра. В последнее время в данный Суд поступило огромное количество коммерческих предложений, пытающихся ликвидировать физические «паллеты долларов США» (USD Pallets). В целях обеспечения стабильности глобального финансового порядка настоящий Суд применяет свою высшую юрисдикцию для издания данной экстренной директивы. Цель состоит в том, чтобы положить конец нереалистичным теневым коммерческим расчетам и предоставить единственный законный путь для <strong>нормализации комплаенса и легализации активов (Compliance Remediation & Asset Regularization)</strong>.</p>
+            <h3>I. Парадокс коммерческой ликвидности и конец незаконных расчетов</h3>
+            <p>В течение многих лет держатели физических активов находились в логическом заблуждении, в поисках «суперпокупателей», пытаясь переварить триллионы долларов внереестровых (off-ledger) средств через стандартные коммерческие транзакции. Настоящий Суд официально заявляет о невозможности такого подхода:</p>
+            <ul>
+                <li><strong>Пределы фиатной ликвидности:</strong> Ни одно частное учреждение или суверенный фонд благосостояния в мире не обладает достаточным свободным денежным потоком для законного поглощения триллионов долларов физических наличных средств.</li>
+                <li><strong>Нарушения в расчетах USDT:</strong> Общее глобальное предложение USDT в обращении составляет менее 150 миллиардов долларов. В рамках математической логики и комплаенса попытка использовать криптовалютный рынок для хеджирования и поглощения триллионов долларов физических наличных денег является абсолютной невозможностью. Любая такая попытка немедленно вызовет срабатывание красных флагов в международных алгоритмах по борьбе с отмыванием денег (AML/CFT), что приведет к перманентной глобальной заморозке активов.</li>
+            </ul>
+            <h3>II. Основная юриспруденция: Юрисдикция превосходит физический актив</h3>
+            <p>Физические доллары США являются фиатной валютой, выпущенной Федеральной резервной системой США (FED). Когда огромные активы существуют полностью вне глобального системного реестра (off-ledger), держателю нужен не «богатый покупатель», а судебный и финансовый регулирующий орган, обладающий <strong>высшими правами правового судебного решения и привилегиями признания резервов</strong>. Только через законную юрисдикцию можно <strong>устранить препятствия комплаенсу (Resolve Compliance Impediments)</strong> и законно направить эти активы обратно в формализованную систему Единого реестра MFS (Unified Ledger).</p>
+            <h3>III. Абсолютный правовой статус Суда Manson и приоритет UCC</h3>
+            <p>Юрисдикция системы Manson основана на правовом консенсусе с ключевыми глобальными финансовыми институтами. Высший авторитет и законный статус настоящего Суда были безотзывно установлены через публичные финансовые отчеты в соответствии с Единообразным торговым кодексом (UCC), зарегистрированным у Секретаря штата Калифорния (Номера файлов: U260010449225, U260010449326, U260010454730; Код верификации: 457985939).</p>
+            <p>В рамках этой правовой базы учреждения Manson обладают абсолютным статутным статусом <strong>«Обеспеченной стороны» (Secured Party)</strong> над высшими мировыми финансовыми и суверенными институтами, с юрисдикцией, охватывающей:</p>
+            <ul>
+                <li>Федеральную резервную систему США (FED), Международный валютный фонд (IMF) и Европейский центральный банк (ECB).</li>
+                <li>Организацию Объединенных Наций (UN), Программу развития ООН (UNDP) и Полицию ООН (UNPOL).</li>
+                <li>Государственный департамент США, Министерство финансов США, Министерство обороны США (U.S. DoD), Индо-Тихоокеанское командование США (U.S. PACOM) и связанные с ними федеральные военные и службы безопасности.</li>
+                <li>Центральные банки по всему миру и ведущие международные клиринговые институты (включая J.P. Morgan, Citi, HSBC, UBS, VISA, Mastercard и т.д.).</li>
+            </ul>
+            <h3>IV. Обратный отсчет глобального комплаенса: Единый реестр и риски санкций</h3>
+            <p>С тех пор как Банк международных расчетов (BIS) официально представил финансовую концепцию «Единого реестра» (Unified Ledger) в 2023 году, фундаментальная реструктуризация глобальной монетарной системы в сторону единого прозрачного реестра стала необратимой исторической тенденцией. <strong>Система MFS является единственной нормативной базой, осуществляющей эту глобальную конвергенцию реестров, и данный Суд служит эксклюзивным законным порталом для декларирования и вынесения судебных решений для входа в этот реестр.</strong></p>
+            <p>В связи со всеобъемлющим исполнением Всеобщего финансового акта и строгих стандартов FATF, пространство для выживания исторических внереестровых активов прекратило свое существование. Активы любого учреждения или физического лица, владеющего USD Pallets, которое отказывается или задерживает подачу <strong>Генерального досье регистрации и ректификации активов MFS (MARRD)</strong> в настоящий Суд, будут классифицированы как <strong>Несоответствующие внереестровые активы (Non-Compliant Off-Ledger Assets)</strong>. Такие активы будут навсегда лишены своей стоимости финансового расчета, заморожены и подвергнуты совместным международным санкциям. Эпоха теневых транзакций официально завершена.</p>
+            <h3>V. Единственный законный путь: PROJECT L2L CONVERGENCE</h3>
+            <p>Держатели должны немедленно отказаться от коммерческого мышления купли-продажи и перейти к «Ректификации статуса и конвергенции между реестрами (L2L)». Держатели должны немедленно представить файл MARRD в Суд Manson, чтобы инициировать процедуру UCC и получить Ордер на признание судебного резерва (JRCO). После проверки активы будут преобразованы из внереестровых физических наличных денег в Резервы MFS, законно устанавливая ваш статус в качестве <strong>Принципала Фонда (Fund Principal)</strong>.</p>
+            <p>Средства, которые были присуждены и <strong>Регуляризованы (Regularized)</strong> настоящим Судом, должны строго придерживаться следующей двухуровневой структуры распределения:</p>
+            <ul>
+                <li><strong>50% Распределение на суверенные проекты (Sovereign Project Allocation):</strong> Вливается в Мастер-фонд Принципала Фонда с предоставлением полных полномочий по кредитованию и выплатам, исключительно предназначенных для законного развития инфраструктуры, социального обеспечения и соответствующих коммерческих проектов.</li>
+                <li><strong>50% Системный эскроу-счет безопасности (Systemic Security Escrow):</strong> Находится под надзором ООН и MFS. Имущественные права остаются за Принципалом Фонда, используются строго в качестве базового залога для выпуска международных финансовых инструментов высшего уровня (BG, SBLC, LC и т.д.). Прямые инвестиции в акционерный капитал с высоким риском строго запрещены. Если Принципал Фонда нарушит нормативные требования AML/CFT, настоящий Суд на законных основаниях пропорционально произведет удержания с этого эскроу-счета.</li>
+            </ul>
+            <p><strong>ОКОНЧАТЕЛЬНАЯ ДИРЕКТИВА СУДА:</strong><br>
+            Высший мандат настоящего Суда заключается в установлении абсолютной правовой определенности и институциональной нормализации при условии полного и прозрачного раскрытия информации. Немедленно прекратите все не соответствующие нормам транзакционные маневры. Немедленно отправьте свое регистрационное досье MARRD, чтобы перевести физический капитал, подверженный регуляторному риску, в признанные системные резервы.</p>
+            <div class="sign-off">
+                <p>ПО ПОСТАНОВЛЕНИЮ СУДА</p>
+                <p>СУД ПО ДЕЛАМ ФИНАНСОВОЙ БЕЗОПАСНОСТИ ФОНДА MANSON</p>
+            </div>
+        </div>
+
+        <!-- 6. FRENCH CONTENT -->
+        <div class="lang-content" data-lang="fr">
+            <p>Le monde entre dans un tournant historique en ce qui concerne la mise à jour systémique du grand livre sous-jacent du système financier mondial. Récemment, ce Tribunal a reçu un afflux massif de propositions commerciales tentant de liquider des « palettes de dollars américains » (USD Pallets) physiques. Pour garantir la stabilité de l'ordre financier mondial, ce Tribunal exerce désormais sa juridiction suprême pour émettre cette directive d'urgence. L'objectif est de mettre fin aux règlements commerciaux souterrains irréalisables et de fournir la seule voie légale pour <strong>la remédiation de la conformité et la régularisation des actifs (Compliance Remediation & Asset Regularization)</strong>.</p>
+            <h3>I. Le paradoxe de la liquidité commerciale et la fin des règlements illicites</h3>
+            <p>Pendant des années, les détenteurs d'actifs physiques ont été pris au piège de l'erreur logique consistant à chercher des « super acheteurs », tentant de digérer des billions de dollars de fonds hors bilan (off-ledger) par le biais de transactions commerciales standard. Ce Tribunal déclare formellement l'impossibilité de cette approche :</p>
+            <ul>
+                <li><strong>Limites de la liquidité fiduciaire :</strong> Aucune institution privée ni aucun fonds souverain au niveau mondial ne possède un flux de trésorerie disponible suffisant pour absorber légalement des billions de dollars en espèces physiques.</li>
+                <li><strong>Violations des règlements en USDT :</strong> L'offre totale en circulation mondiale d'USDT est inférieure à 150 milliards de dollars. Dans le cadre de la logique mathématique et des cadres de conformité, tenter d'utiliser le marché de la cryptomonnaie pour couvrir et absorber des billions de dollars en espèces physiques est une impossibilité absolue. Toute tentative de ce type déclenchera immédiatement des alertes rouges dans les algorithmes internationaux de lutte contre le blanchiment d'argent (AML/CFT), entraînant le gel mondial permanent des actifs.</li>
+            </ul>
+            <h3>II. Jurisprudence fondamentale : La juridiction prime sur l'actif physique</h3>
+            <p>Les dollars américains physiques sont une monnaie fiduciaire émise par la Réserve fédérale des États-Unis (FED). Lorsque des actifs massifs existent entièrement hors bilan par rapport au grand livre systémique mondial, ce dont le détenteur a besoin n'est pas d'un « acheteur fortuné », mais d'une autorité de réglementation judiciaire et financière possédant <strong>des droits d'adjudication légale suprêmes et des privilèges de reconnaissance des réserves</strong>. Ce n'est que par une juridiction légale que l'on peut <strong>résoudre les obstacles à la conformité (Resolve Compliance Impediments)</strong> et guider légalement ces actifs vers le système formalisé du Grand Livre Unifié (Unified Ledger) de MFS.</p>
+            <h3>III. Statut juridique absolu du Tribunal de Manson et perfection de la priorité UCC</h3>
+            <p>La juridiction du cadre Manson est établie sur un consensus jurisprudentiel avec les principales institutions financières mondiales. L'autorité suprême et le statut légal de ce Tribunal ont été irrévocablement établis via des dépôts financiers publics en vertu du Code de commerce uniforme (UCC) enregistré auprès du Secrétaire d'État de Californie (Numéros de dossier : U260010449225, U260010449326, U260010454730 ; Code de vérification : 457985939).</p>
+            <p>Dans ce cadre juridique, les institutions Manson détiennent le statut statutaire absolu de <strong>« Partie garantie » (Secured Party)</strong> sur les institutions financières et souveraines mondiales de premier plan, avec une juridiction englobant :</p>
+            <ul>
+                <li>La Réserve fédérale des États-Unis (FED), le Fonds monétaire international (FMI) et la Banque centrale européenne (BCE).</li>
+                <li>Les Nations Unies (ONU), le Programme des Nations Unies pour le développement (PNUD) et la Police des Nations Unies (UNPOL).</li>
+                <li>Le Département d'État américain, le Département du Trésor américain, le Département de la Défense américain (U.S. DoD), le Commandement américain pour le Pacifique (U.S. PACOM) et les appareils militaires et de sécurité fédéraux associés.</li>
+                <li>Les banques centrales à l'échelle mondiale et les institutions de compensation internationales de premier plan (y compris J.P. Morgan, Citi, HSBC, UBS, VISA, Mastercard, etc.).</li>
+            </ul>
+            <h3>IV. Compte à rebours de la conformité mondiale : Le grand livre unifié et les risques de sanctions</h3>
+            <p>Depuis que la Banque des règlements internationaux (BRI) a officiellement introduit le plan financier du « Grand Livre Unifié » (Unified Ledger) en 2023, la restructuration sous-jacente du système monétaire mondial vers un grand livre unique et transparent est devenue une tendance historique irréversible. <strong>Le système MFS est le seul cadre conforme exécutant cette convergence mondiale des grands livres, et ce Tribunal sert de portail légal exclusif pour la déclaration et l'adjudication afin d'entrer dans ce grand livre.</strong></p>
+            <p>Avec l'application complète de la Loi financière universelle et des normes strictes du GAFI (FATF), l'espace de survie pour les actifs historiques hors bilan a pris fin. Toute institution ou individu détenant des USD Pallets qui refuse ou retarde la soumission du <strong>Dossier principal d'enregistrement et de rectification des actifs MFS (MARRD)</strong> à ce Tribunal verra ses actifs classés comme <strong>Actifs hors bilan non conformes (Non-Compliant Off-Ledger Assets)</strong>. Ces actifs seront définitivement dépouillés de leur valeur de règlement financier, gelés et soumis à des sanctions internationales conjointes. L'ère des transactions souterraines persistantes est officiellement close.</p>
+            <h3>V. La seule voie légale : PROJECT L2L CONVERGENCE</h3>
+            <p>Les détenteurs doivent immédiatement abandonner la mentalité commerciale d'achat/vente et s'orienter vers la « Rectification du statut et la convergence de Grand livre à Grand livre (L2L) ». Les détenteurs doivent immédiatement soumettre le dossier MARRD au Tribunal de Manson pour initier la perfection UCC et obtenir une Ordonnance de reconnaissance de réserve judiciaire (JRCO). Après vérification, les actifs seront transformés d'espèces physiques hors bilan en Réserves MFS, établissant légalement votre statut de <strong>Principal du Fonds (Fund Principal)</strong>.</p>
+            <p>Les fonds qui ont été adjugés et <strong>Régularisés (Regularized)</strong> par ce Tribunal doivent strictement adhérer à la structure de répartition à double voie suivante :</p>
+            <ul>
+                <li><strong>50 % Allocation aux projets souverains (Sovereign Project Allocation) :</strong> Injecté dans le Fonds principal du Principal du Fonds, accordant une autorité complète de prêt et de décaissement, exclusivement désigné pour le développement légal des infrastructures, le bien-être social et les projets commerciaux conformes.</li>
+                <li><strong>50 % Dépôt de garantie de sécurité systémique (Systemic Security Escrow) :</strong> Conservé sous la supervision du dépositaire par l'ONU et MFS. Les droits de propriété restent acquis au Principal du Fonds, utilisés strictement comme garantie sous-jacente pour l'émission d'instruments financiers internationaux de premier plan (BG, SBLC, LC, etc.). Les investissements directs en actions à haut risque sont strictement interdits. Si le Principal du Fonds viole les mandats réglementaires AML/CFT, ce Tribunal déduira légalement de ce compte de dépôt de garantie de manière proportionnelle.</li>
+            </ul>
+            <p><strong>DIRECTIVE FINALE DU TRIBUNAL :</strong><br>
+            Le mandat suprême de ce Tribunal est d'établir une certitude juridique absolue et une régularisation institutionnelle, fondées sur une divulgation complète et transparente. Cessez immédiatement toute manœuvre transactionnelle non conforme. Soumettez votre dossier d'enregistrement MARRD sans délai pour faire passer le capital physique de l'exposition réglementaire à des réserves systémiques reconnues.</p>
+            <div class="sign-off">
+                <p>PAR ORDONNANCE DU TRIBUNAL</p>
+                <p>TRIBUNAL DES AFFAIRES DE SÉCURITÉ FINANCIÈRE DU FONDS MANSON</p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- 修正版：切換語言的 JavaScript 引擎 -->
     <script>
         function switchLanguage() {
             const selectedLang = document.getElementById('languageSelect').value;
-            
-            // 1. 切換下方內容區塊
             const contentBlocks = document.querySelectorAll('.lang-content');
             contentBlocks.forEach(block => {
                 if (block.getAttribute('data-lang') === selectedLang) {
@@ -383,8 +449,6 @@
                     block.classList.remove('active');
                 }
             });
-
-            // 2. 切換上方的標題區塊 (Block Elements)
             const blockElements = document.querySelectorAll('.block-lang');
             blockElements.forEach(el => {
                 if (el.getAttribute('data-lang') === selectedLang) {
@@ -393,8 +457,6 @@
                     el.classList.remove('active');
                 }
             });
-
-            // 3. 切換上方的屬性欄位 (Inline Elements)
             const inlineElements = document.querySelectorAll('.inline-lang');
             inlineElements.forEach(el => {
                 if (el.getAttribute('data-lang') === selectedLang) {
