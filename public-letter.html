@@ -15,6 +15,7 @@
             display: flex;
             justify-content: center;
         }
+
         .document-container {
             background-color: #ffffff;
             max-width: 850px;
@@ -24,11 +25,13 @@
             border: 1px solid #ccc;
             position: relative;
         }
+
         .lang-selector {
             position: absolute;
             top: 30px;
             right: 30px;
         }
+        
         .lang-selector select {
             padding: 6px 10px;
             font-family: "Times New Roman", Times, serif;
@@ -39,40 +42,48 @@
             cursor: pointer;
             outline: none;
         }
+
         .lang-selector select:hover {
             background-color: #f9f9f9;
         }
+
         .header {
             text-align: center;
             border-bottom: 2px solid #000;
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
+
         .logo {
             display: block;
             margin: 0 auto 15px auto;
             width: 140px;
             height: auto;
         }
+
         .header h1 {
             font-size: 24px;
             font-weight: bold;
             margin: 5px 0;
             letter-spacing: 1px;
         }
+
         .header h2 {
             font-size: 18px;
             font-weight: normal;
             margin: 5px 0;
         }
+
         .meta-info {
             text-align: left;
             margin-bottom: 30px;
             font-size: 14px;
         }
+
         .meta-info p {
             margin: 4px 0;
         }
+
         h3 {
             font-size: 18px;
             text-transform: uppercase;
@@ -81,36 +92,46 @@
             border-bottom: 1px solid #000;
             display: inline-block;
         }
+
         p {
             font-size: 15px;
             text-align: justify;
             margin-bottom: 15px;
         }
+
         ul {
             margin-top: 5px;
             margin-bottom: 20px;
             padding-left: 20px;
         }
+
         li {
             font-size: 15px;
             margin-bottom: 8px;
             text-align: justify;
         }
+
         .sign-off {
             margin-top: 60px;
             text-align: center;
             font-weight: bold;
             text-transform: uppercase;
         }
+        
         .sign-off p {
             margin: 5px 0;
         }
+
+        /* 語系顯示控制 */
         .lang-content { display: none; }
         .lang-content.active { display: block; }
+        
         .block-lang { display: none; }
         .block-lang.active { display: block; }
+        
         .inline-lang { display: none; }
         .inline-lang.active { display: inline; }
+
         @media (max-width: 600px) {
             .document-container { padding: 30px 20px; }
             .header h1 { font-size: 20px; }
@@ -122,6 +143,8 @@
 <body>
 
     <div class="document-container">
+        
+        <!-- 語言下拉選單 (完整 10 語系) -->
         <div class="lang-selector">
             <select id="languageSelect" onchange="switchLanguage()">
                 <option value="en">English</option>
@@ -137,8 +160,10 @@
             </select>
         </div>
 
+        <!-- HEADER SECTION -->
         <div class="header">
             <img src="manson-logo.png" alt="Manson Court Seal" class="logo">
+            
             <h1 class="block-lang active" data-lang="en">OFFICIAL COURT DIRECTIVE</h1>
             <h1 class="block-lang" data-lang="vn">CHỈ THỊ CỦA TÒA ÁN</h1>
             <h1 class="block-lang" data-lang="ja">裁判所公式指令</h1>
@@ -149,6 +174,7 @@
             <h1 class="block-lang" data-lang="ar" dir="rtl">توجيه قضائي رسمي</h1>
             <h1 class="block-lang" data-lang="zh-tw">官方司法指令</h1>
             <h1 class="block-lang" data-lang="zh-cn">官方司法指令</h1>
+            
             <h2 class="block-lang active" data-lang="en">Global Judicial Reserve Recognition & Compliance Rectification Directive</h2>
             <h2 class="block-lang" data-lang="vn">Chỉ thị Công nhận Dự trữ Tư pháp & Chuẩn hóa Tuân thủ Toàn cầu</h2>
             <h2 class="block-lang" data-lang="ja">グローバル司法準備金認定およびコンプライアンス是正指令</h2>
@@ -161,6 +187,7 @@
             <h2 class="block-lang" data-lang="zh-cn">全球司法储备认列与合规重整指令</h2>
         </div>
 
+        <!-- META INFORMATION -->
         <div class="meta-info">
             <p>
                 <strong class="inline-lang active" data-lang="en">ISSUING AUTHORITY:</strong>
@@ -173,6 +200,7 @@
                 <strong class="inline-lang" data-lang="ar" dir="rtl">جهة الإصدار:</strong>
                 <strong class="inline-lang" data-lang="zh-tw">發布機構：</strong>
                 <strong class="inline-lang" data-lang="zh-cn">发布机构：</strong>
+                
                 <span class="inline-lang active" data-lang="en">Manson Fund Fiscal Security Affairs Court & Monetary Future Standards (MFS) Global Headquarters</span>
                 <span class="inline-lang" data-lang="vn">Tòa án Vụ việc An ninh Tài chính Quỹ Manson & Trụ sở Toàn cầu Tiêu chuẩn Tiền tệ Tương lai (MFS).</span>
                 <span class="inline-lang" data-lang="ja">マンソン基金財政安全保障問題裁判所 および 未来通貨基準 (MFS) グローバル本部</span>
@@ -195,6 +223,7 @@
                 <strong class="inline-lang" data-lang="ar" dir="rtl">الموقع:</strong>
                 <strong class="inline-lang" data-lang="zh-tw">發布地點：</strong>
                 <strong class="inline-lang" data-lang="zh-cn">发布地点：</strong>
+                
                 <span class="inline-lang active" data-lang="en">London, United Kingdom</span>
                 <span class="inline-lang" data-lang="vn">London, Vương quốc Anh.</span>
                 <span class="inline-lang" data-lang="ja">英国、ロンドン</span>
@@ -217,6 +246,7 @@
                 <strong class="inline-lang" data-lang="ar" dir="rtl">تاريخ السريان:</strong>
                 <strong class="inline-lang" data-lang="zh-tw">生效日期：</strong>
                 <strong class="inline-lang" data-lang="zh-cn">生效日期：</strong>
+                
                 <span class="inline-lang active" data-lang="en">September 9, 2026</span>
                 <span class="inline-lang" data-lang="vn">09 tháng 09 năm 2026.</span>
                 <span class="inline-lang" data-lang="ja">2026年9月9日</span>
@@ -239,6 +269,7 @@
                 <strong class="inline-lang" data-lang="ar" dir="rtl">قابلية التطبيق:</strong>
                 <strong class="inline-lang" data-lang="zh-tw">適用對象：</strong>
                 <strong class="inline-lang" data-lang="zh-cn">适用对象：</strong>
+                
                 <span class="inline-lang active" data-lang="en">All global entities, fiduciaries, trustees, and ultimate beneficial owners holding, safeguarding, or administering physical USD Pallets, inclusive of complete 17, 21, or 24 DOCS packages (including SKR, Fund Source Certificates, etc.).</span>
                 <span class="inline-lang" data-lang="vn">Tất cả các tổ chức, cá nhân được ủy thác và người thụ hưởng cuối cùng trên toàn cầu đang nắm giữ, bảo quản hoặc quản lý tài sản Đô la Mỹ vật lý (USD Pallets), bao gồm toàn bộ hồ sơ nguồn gốc và thông quan loại 17, 21 hoặc 24.</span>
                 <span class="inline-lang" data-lang="ja">物理的な米ドルパレット（完全な17、21、または24文書パッケージを含む）を保持、保管、または管理する世界中のすべての事業体、受託者、および最終的受益者。</span>
@@ -480,8 +511,7 @@
             </div>
         </div>
 
-    </div>
-<!-- 7. SPANISH CONTENT -->
+        <!-- 7. SPANISH CONTENT -->
         <div class="lang-content" data-lang="es">
             <p>El mundo está entrando en un punto de inflexión histórico en la actualización sistémica del libro mayor financiero global. Recientemente, este Tribunal ha recibido una vasta afluencia de propuestas comerciales que intentan liquidar "Pallets de USD" físicos. Para garantizar la estabilidad del orden financiero mundial, este Tribunal ejerce ahora su jurisdicción suprema para emitir esta directiva de emergencia. El objetivo es poner fin a los acuerdos comerciales clandestinos poco prácticos y proporcionar la única vía legal para <strong>la Remediación de Cumplimiento y la Regularización de Activos (Compliance Remediation & Asset Regularization)</strong>.</p>
             <h3>I. El Paradoja de la Liquidez Comercial y el Fin de los Asentamientos Ilícitos</h3>
@@ -556,7 +586,8 @@
                 <p>محكمة شؤون الأمن المالي لصندوق مانسون</p>
             </div>
         </div>
-    <!-- 9. TRADITIONAL CHINESE CONTENT -->
+
+        <!-- 9. TRADITIONAL CHINESE CONTENT -->
         <div class="lang-content" data-lang="zh-tw">
             <p>世界正步入全球金融底層總帳更新的歷史性轉折。本法院近期接獲大量關於變現「實體美元托盤 (USD Pallets)」的商業提案。基於全球金融秩序之穩定，本法院現以最高管轄權限發布本緊急指令，旨在終結不切實際的地下商業結算，並提供唯一合法的 <strong>合規修復與資產正規化 (Compliance Remediation & Asset Regularization)</strong> 路徑。</p>
             <h3>一、 商業流動性悖論與非法結算的終結</h3>
@@ -631,9 +662,15 @@
                 <p>MANSON FUND FISCAL SECURITY AFFAIRS COURT</p>
             </div>
         </div>
+
+    <!-- 注意！這裡才是 document-container 的真正關閉標籤 -->
+    </div>
+
+    <!-- JavaScript 切換邏輯 -->
     <script>
         function switchLanguage() {
             const selectedLang = document.getElementById('languageSelect').value;
+            
             const contentBlocks = document.querySelectorAll('.lang-content');
             contentBlocks.forEach(block => {
                 if (block.getAttribute('data-lang') === selectedLang) {
@@ -642,6 +679,7 @@
                     block.classList.remove('active');
                 }
             });
+
             const blockElements = document.querySelectorAll('.block-lang');
             blockElements.forEach(el => {
                 if (el.getAttribute('data-lang') === selectedLang) {
@@ -650,6 +688,7 @@
                     el.classList.remove('active');
                 }
             });
+
             const inlineElements = document.querySelectorAll('.inline-lang');
             inlineElements.forEach(el => {
                 if (el.getAttribute('data-lang') === selectedLang) {
